@@ -1,0 +1,54 @@
+﻿import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn import datasets
+from sklearn.decomposition import PCA
+
+# obtenemos los datos que necesitamos
+iris = datasets.load_iris()
+caracteristicas = iris.data
+especies = iris.target_names
+
+
+plt.figure(1)
+plt.scatter(0.1*np.random.randn(49,1),caracteristicas[0:49,2])
+plt.scatter(1+0.1*np.random.randn(49,1),caracteristicas[50:99,2])
+plt.scatter(2+0.1*np.random.randn(49,1),caracteristicas[100:149,2])
+plt.ylabel('Longitud_Petalo (cm)')
+plt.show()
+
+plt.figure(2)
+plt.scatter(0.1*np.random.randn(49,1),caracteristicas[0:49,3])
+plt.scatter(1+0.1*np.random.randn(49,1),caracteristicas[50:99,3])
+plt.scatter(2+0.1*np.random.randn(49,1),caracteristicas[100:149,3])
+plt.ylabel('Anchura_Petalo (cm)')
+plt.show()
+
+plt.figure(3)
+plt.scatter(0.1*np.random.randn(49,1),caracteristicas[0:49,0])
+plt.scatter(1+0.1*np.random.randn(49,1),caracteristicas[50:99,0])
+plt.scatter(2+0.1*np.random.randn(49,1),caracteristicas[100:149,0])
+plt.ylabel('Longitud_Sepalo (cm)')
+plt.show()
+
+plt.figure(4)
+plt.scatter(0.1*np.random.randn(49,1),caracteristicas[0:49,1])
+plt.scatter(1+0.1*np.random.randn(49,1),caracteristicas[50:99,1])
+plt.scatter(2+0.1*np.random.randn(49,1),caracteristicas[100:149,1])
+plt.ylabel('Anchura_Sepalo (cm)')
+plt.show()
+plt.figure(5)
+plt.scatter(caracteristicas[0:49,2],caracteristicas[0:49,3])
+plt.scatter(caracteristicas[50:99,2],caracteristicas[50:99,3])
+plt.scatter(caracteristicas[100:149,2],caracteristicas[100:149,3])
+plt.xlabel('Longitud de Pétalo (cm)')
+plt.ylabel('Anchura_Petalo (cm)')
+plt.show()
+
+plt.figure(6)
+plt.scatter(caracteristicas[0:49,0],caracteristicas[0:49,1])
+plt.scatter(caracteristicas[50:99,0],caracteristicas[50:99,1])
+plt.scatter(caracteristicas[100:149,0],caracteristicas[100:149,1])
+plt.xlabel('Longitud_Sepalo (cm)')
+plt.ylabel('Anchura_Sepalo (cm)')
+plt.show()
